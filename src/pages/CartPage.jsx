@@ -1,9 +1,10 @@
 import '../styles/cart-page.css';
+import '../styles/common.css';
 
 const CartPage = () => {
   return (
     <div>
-      <h1>Cart Page</h1>
+      <h1 className='main-headings'>Cart Page</h1>
     </div>
   )
 }

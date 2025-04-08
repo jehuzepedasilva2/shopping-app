@@ -1,4 +1,7 @@
 :root {
+  --primary-font-family: 'Bebas Neue', sans;
+  --secondary-font-family: 'Montserrat', sans;
+
   --text-primary-color: #000000;
   --text-selected-color: #FFFFFF;
 }

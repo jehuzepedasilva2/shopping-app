@@ -1,9 +1,10 @@
 import '../styles/pants-page.css';
+import '../styles/common.css';
 
 const PantsPage = () => {
   return (
     <div>
-      <h1>Pants Page</h1>
+      <h1 className='main-headings'>Pants Page</h1>
     </div>
   )
 }
