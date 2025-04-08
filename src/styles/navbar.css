@@ -1,0 +1,16 @@
+#navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--text-primary-color);
+}
+
+.selected {
+  background-color: var(--text-primary-color);
+  color: var(--text-selected-color);
+}
