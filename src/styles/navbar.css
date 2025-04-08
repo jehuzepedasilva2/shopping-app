@@ -1,9 +1,10 @@
 #navbar {
-  display: flex;
+    display: flex;
   justify-content: space-between;
   align-items: flex-end;
   font-family: var(--secondary-font-family);
   font-size: var(--secondary-font-size);
+  font-weight: 600;
   
   padding-top: 0.2rem;
   padding-left: 1rem;
@@ -32,6 +33,8 @@
 }
 
 .link {
+  position: relative;
+
   display: flex;
   justify-content: center;
   align-items: center;

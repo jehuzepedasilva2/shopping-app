@@ -1,6 +1,6 @@
-import { NavLink } from 'react-router-dom';
 import logo from '../assets/images/steel_theory_logo.png';
 import '../styles/navbar.css';
+import Navlink from './Navlink.jsx';
 
 export default function Navbar() {
 
@@ -14,30 +14,10 @@ export default function Navbar() {
         <img src={logo} />
       </div>
       <div className='right-nav'>
-        <NavLink 
-          to='/home' 
-          className={({ isActive }) => addSelected(isActive)}
-        >
-            HOME
-        </NavLink>
-        <NavLink 
-          to='/shirts' 
-          className={({ isActive }) => addSelected(isActive)}
-        >
-          SHIRTS
-        </NavLink>
-        <NavLink 
-          to='/pants' 
-          className={({ isActive }) => addSelected(isActive)}
-        >
-          PANTS
-        </NavLink>
-        <NavLink 
-          to='/cart' 
-          className={({ isActive }) => addSelected(isActive)}
-        >
-          CART
-        </NavLink>
+        <Navlink title='HOME' to='/home' classFunction={addSelected} />
+        <Navlink title='SHIRTS' to='/shirts' classFunction={addSelected} />
+        <Navlink title='PANTS' to='/pants' classFunction={addSelected} />
+        <Navlink title='CART' to='/cart' classFunction={addSelected} />
       </div>
     </div>
   );

@@ -6,10 +6,10 @@ const HomePage = () => {
   return (
     <div className='homepage'>
       <div className='slogan-container-1'>
-        Theory in Motion.
+        <span>Theory</span> in Motion.
       </div>
       <div className='slogan-container-2'>
-        Strength in Form.
+        Strength in <span>Form</span>.
       </div>
       <img id='homepage-img' src={frontImage}></img>
     </div>

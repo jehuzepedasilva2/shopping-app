@@ -20,6 +20,10 @@
   left: 50%;
 }
 
+.homepage span {
+  color: var(--home-slogan-color)
+}
+
 #homepage-img {
-  object-fit: contain;
+  object-fit: cover;
 }
