@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import logo from '../assets/images/steel_theory_logo.png';
 import '../styles/navbar.css';
 
 export default function Navbar() {
@@ -9,10 +10,35 @@ export default function Navbar() {
 
   return (
     <div id="navbar">
-      <NavLink to='/home' className={({ isActive }) => addSelected(isActive)}>Home</NavLink>
-      <NavLink to='/shirts' className={({ isActive }) => addSelected(isActive)}>Shirts</NavLink>
-      <NavLink to='/pants' className={({ isActive }) => addSelected(isActive)}>Pants</NavLink>
-      <NavLink to='/cart' className={({ isActive }) => addSelected(isActive)}>Cart</NavLink>
+      <div className='left-nav'>
+        <img src={logo} />
+      </div>
+      <div className='right-nav'>
+        <NavLink 
+          to='/home' 
+          className={({ isActive }) => addSelected(isActive)}
+        >
+            HOME
+        </NavLink>
+        <NavLink 
+          to='/shirts' 
+          className={({ isActive }) => addSelected(isActive)}
+        >
+          SHIRTS
+        </NavLink>
+        <NavLink 
+          to='/pants' 
+          className={({ isActive }) => addSelected(isActive)}
+        >
+          PANTS
+        </NavLink>
+        <NavLink 
+          to='/cart' 
+          className={({ isActive }) => addSelected(isActive)}
+        >
+          CART
+        </NavLink>
+      </div>
     </div>
   );
 }

@@ -1,3 +1,5 @@
 .main-headings {
   font-family: var(--primary-font-family);
+  font-size: var(--primary-font-size);
+  text-align: center;
 }

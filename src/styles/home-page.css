@@ -1,0 +1,25 @@
+.homepage {
+  position: relative;
+}
+
+.slogan-container-1 {
+  color: var(--text-selected-color);
+  font-size: 4.5rem;
+  font-family: var(--primary-font-family);
+  position: absolute;
+  top: 5%;
+  left: 40%;
+}
+
+.slogan-container-2 {
+  color: var(--text-selected-color);
+  font-size: 4.5rem;
+  font-family: var(--primary-font-family);
+  position: absolute;
+  top: 11%;
+  left: 50%;
+}
+
+#homepage-img {
+  object-fit: contain;
+}

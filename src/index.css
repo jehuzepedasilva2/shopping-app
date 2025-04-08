@@ -1,7 +1,23 @@
 :root {
+  /* fonts */
   --primary-font-family: 'Bebas Neue', sans;
   --secondary-font-family: 'Montserrat', sans;
 
+  /* font colors */
   --text-primary-color: #000000;
   --text-selected-color: #FFFFFF;
+
+  /* font sizes */
+  --primary-font-size: 2.3rem;
+  --secondary-font-size: 1rem;
+
+  /* background-colors */
+  --nav-bg-color: #4682B4;
+}
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
