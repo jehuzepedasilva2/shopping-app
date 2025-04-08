@@ -1,0 +1,20 @@
+.items {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item-img-container {
+  display: flex;
+  /* align-items: center ; */
+  /* justify-content: center; */
+  flex-wrap: wrap;
+  gap: 2rem;
+  font-family: var(--secondary-font-family);
+}
+
+.item-img-container img {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+  object-position: center;
+}
