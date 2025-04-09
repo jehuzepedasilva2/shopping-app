@@ -10,7 +10,7 @@ const CartPage = () => {
   return (
     <div>
       <h1 className='main-headings'>Cart</h1>
-      <h2>Number of Items: {cartDetails.numItems}</h2>
+      <h2>Number of Items: {cartDetails.items.length}</h2>
       <h2>Total: {cartDetails.total}</h2>
     </div>
   )

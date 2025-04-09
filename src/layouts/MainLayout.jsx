@@ -11,7 +11,7 @@ const CartContext = createContext();
 
 export default function MainLayout() {
 
-  const [cartDetails, setCartDetails] = useState({numItems: 0, total: 0, items: []})
+  const [cartDetails, setCartDetails] = useState({total: 0, items: []})
 
   return (
     <CartContext.Provider value={{cartDetails, setCartDetails}}>

@@ -36,7 +36,7 @@ const Item = ({ data, other=false }) => {
         <button
           className='buy-btn'
           onClick={() => { 
-            setCartDetails(previous => {return {items: [...previous.items, {src: imgSrc, price: itemPrice, desc: desc}], numItems: previous.numItems + 1, total: previous.total + Number(itemPrice)}}) 
+            setCartDetails(previous => {return {items: [...previous.items, {id: data.id, src: imgSrc, price: itemPrice, desc: desc}], total: previous.total + Number(itemPrice)}}) 
           }}
         >
           Add to Cart
