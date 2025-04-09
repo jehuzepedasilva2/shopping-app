@@ -4,9 +4,11 @@ import MainLayout from '../layouts/MainLayout.jsx';
 import PantsPage from '../pages/PantsPage.jsx';
 import CartPage from '../pages/CartPage.jsx';
 import MensShirtPage from '../pages/MensShirtPage.jsx';
-import ShirtsLayout from '../layouts/ShirtsLayout.jsx';
+import ClothingLayout from '../layouts/ClothingLayout.jsx';
 import ShirtsPage from '../pages/ShirtsPage.jsx';
 import WomensShirtPage from '../pages/WomensShirtPage.jsx';
+import MensPantsPage from '../pages/MensPantsPage.jsx';
+import WomensPantsPage from '../pages/WomensPantsPage.jsx';
 
 // for cart look into createContext, useContext or simply add to MainLayout state and pass down to every children
 
@@ -26,12 +28,12 @@ const routes = [
         element: <HomePage />,
       },
       {
-        path: '/Home?', 
+        path: '/home', 
         element: <HomePage />,
       }, 
       {
         path: '/shirts', 
-        element: <ShirtsLayout />,
+        element: <ClothingLayout type='Shirts'  menLink='/shirts/men' womenLink='/shirts/women' />,
         children: [
           {
             path: '/shirts', 
@@ -42,26 +44,26 @@ const routes = [
             element: <MensShirtPage />,
           },
           {
-            path: '/shirts/woman',
+            path: '/shirts/women',
             element: <WomensShirtPage />,
           }
         ]
       }, 
       {
         path: '/pants', 
-        element: <ShirtsLayout />,
+        element: <ClothingLayout type='Pants'  menLink='/pants/men' womenLink='/pants/women' />,
         children: [
           {
             path: '/pants', 
-            element: <ShirtsPage />
+            element: <PantsPage />
           },
           {
             path: '/pants/men',
-            element: <MensShirtPage />,
+            element: <MensPantsPage />,
           },
           {
-            path: '/pants/woman',
-            element: <WomensShirtPage />,
+            path: '/pants/women',
+            element: <WomensPantsPage />,
           }
         ]
       }, 

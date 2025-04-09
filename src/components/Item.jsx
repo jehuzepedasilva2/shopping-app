@@ -2,31 +2,39 @@ import '../styles/item.css';
 import { useState, useContext } from 'react';
 import { CartContext } from '../layouts/MainLayout.jsx';
 
-const Item = ({ data }) => {
+const Item = ({ data, other=false }) => {
+
+  let desc = '', imgSrc = '', itemPrice = '';
+  if (other) {
+    console.log(data.alt_description, data);
+    desc = data.alt_description;
+    imgSrc = data.urls.full;
+    itemPrice = 99.99;
+    // itemPrice = (Math.random() * (140 - 30)) + 30;
+    // itemPrice = Math.round(itemPrice * 100) / 100;
+  } else {
+    desc = data.description;
+    imgSrc = data.image;
+    itemPrice = data.price;
+  }
 
   const [showFullDesc, setShowFullDesc] = useState(false);
   const { cartDetails, setCartDetails } = useContext(CartContext);
 
-  if (!data) {
-    return <p>Loading...</p>
-  }
-
-  console.log(cartDetails);
-
   return (
     <div className='item'>
-      <img key={data.id} src={data.image}></img>
+      <img key={data.id} src={imgSrc}></img>
       <div className='item-info'>
-        {showFullDesc ? data.description : data.description.substring(0, 90) + '...'}
+        {showFullDesc || desc.length < 90 ? desc : desc.substring(0, 90) + '...'}
       </div>
-      <button
+      {desc.length > 90 && <button
         className='more-less-btn'
         onClick={() => setShowFullDesc((previous) => !previous)}
       >
         {showFullDesc ? 'Less' : 'More'}
-      </button>
+      </button>}
       <div className='item-price'>
-        ${data.price}
+        ${itemPrice}
         <button
           className='buy-btn'
           onClick={() => { 

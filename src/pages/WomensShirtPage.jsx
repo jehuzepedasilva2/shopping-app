@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Shirt from "../components/Shirt";
+import DisplayItem from "../components/DisplayItem";
 
 const WomensShirtPage = () => {
     const [imgsData, setImgsData] = useState([]);
@@ -15,7 +15,7 @@ const WomensShirtPage = () => {
     
   return (
     <div id='shirts-women-page'>
-      <Shirt imgsData={imgsData}/>
+      <DisplayItem imgsData={imgsData}/>
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import '../styles/shirts-page.css';
 import '../styles/common.css';
 import { useEffect, useState } from 'react';
-import Shirt from '../components/Shirt.jsx';
+import DisplayItem from '../components/DisplayItem.jsx';
 
 const ShirtsPage = () => {
   const [imgsDataMen, setImgsDataMen] = useState([]);
@@ -20,7 +20,7 @@ const ShirtsPage = () => {
 
   return (
     <div id='shirts-page'>
-      <Shirt imgsData={imgsDataMen.concat(imgsDataWoman)} />
+      <DisplayItem imgsData={imgsDataMen.concat(imgsDataWoman)} />
     </div>
   )
 }

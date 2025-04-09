@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Navlink from '../components/Navlink.jsx';
 
-const ShirtsLayout = () => {
+const ClothingLayout = ({ type, menLink, womenLink }) => {
 
   const addSelected = (isActive) => {
     return isActive ? 'sub-link selected' : 'sub-link';
@@ -10,12 +10,12 @@ const ShirtsLayout = () => {
   return (
     <>
       <div className='top-page-shirts'>
-        <Navlink title="Men's Shirts" to='/shirts/men' classFunction={addSelected} />
-        <Navlink title="Womans's Shirts" to='/shirts/woman' classFunction={addSelected} />
+        <Navlink title={`Men's ${type}`} to={menLink} classFunction={addSelected} />
+        <Navlink title={`Women's ${type}`} to={womenLink} classFunction={addSelected} />
       </div>
       <Outlet />
     </>
   )
 }
 
-export default ShirtsLayout
+export default ClothingLayout;

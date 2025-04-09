@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Shirt from "../components/Shirt";
+import Shirt from "../components/DisplayItem";
 
 const KEY ='9r9NIUrem4oaWJKpe3MPYbXqvjkDAzEiVg0Sk3zk3Qs';
 
