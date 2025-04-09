@@ -1,4 +1,5 @@
 import '../styles/item.css';
+import '../styles/common.css';
 import { useState, useContext } from 'react';
 import { CartContext } from '../layouts/MainLayout.jsx';
 

@@ -3,3 +3,23 @@
   font-size: var(--primary-font-size);
   text-align: center;
 }
+
+.items {
+  display: flex;
+  justify-content: center;
+}
+
+.item-img-container {
+  font-family: var(--secondary-font-family);
+  display: grid;
+  column-gap: 2rem;
+  row-gap: 2rem;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.item-img-container img {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+  object-position: center;
+}

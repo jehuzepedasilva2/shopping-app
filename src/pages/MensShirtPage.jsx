@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Shirt from "../components/DisplayItem";
+import '../styles/common.css';
 
 const KEY ='9r9NIUrem4oaWJKpe3MPYbXqvjkDAzEiVg0Sk3zk3Qs';
 

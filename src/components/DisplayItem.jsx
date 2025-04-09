@@ -1,5 +1,5 @@
 import Item from './Item.jsx'
-import '../styles/shirt.css';
+import '../styles/common.css';
 
 export default function DisplayItem({ imgsData, other=false }) {
 

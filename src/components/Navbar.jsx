@@ -1,6 +1,7 @@
 import logo from '../assets/images/steel_theory_logo.png';
 import '../styles/navbar.css';
 import Navlink from './Navlink.jsx';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
 
@@ -10,9 +11,9 @@ export default function Navbar() {
 
   return (
     <div id="navbar">
-      <div className='left-nav'>
+      <Link to='/home' className='left-nav'>
         <img src={logo} />
-      </div>
+      </Link>
       <div className='right-nav'>
         <Navlink title='HOME' to='/home' classFunction={addSelected} />
         <Navlink title='SHIRTS' to='/shirts' classFunction={addSelected} />

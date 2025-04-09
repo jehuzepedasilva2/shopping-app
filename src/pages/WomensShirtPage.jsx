@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import DisplayItem from "../components/DisplayItem";
+import '../styles/common.css';
 
 const WomensShirtPage = () => {
     const [imgsData, setImgsData] = useState([]);
