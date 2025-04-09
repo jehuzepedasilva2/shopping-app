@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0.2rem;
+  padding: 0.8rem;
 }
 
 .item-price {
@@ -36,6 +36,7 @@
   background-color: var(--accent-color);
   color: var(--text-selected-color);
   padding: 0.2rem;
+  margin-right: 0.2rem;
   border-radius: 0.2rem;
   cursor: pointer;
   transition: transform 0.2s ease-in;

@@ -15,7 +15,7 @@ const MensPantsPage = () => {
   }, [])
 
   return (
-    <div id='pants-page'>
+    <div id='pants-men-page'>
       <DisplayItem imgsData={imgData} other={true} />
     </div>
   )

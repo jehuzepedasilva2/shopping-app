@@ -1,7 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { useState, createContext } from "react";
-import HomePage from "../pages/Homepage";
 
 // to use:
 // import { useContext } from 'react'
@@ -12,7 +11,7 @@ const CartContext = createContext();
 
 export default function MainLayout() {
 
-  const [cartDetails, setCartDetails] = useState({numItems: 0, total: 0})
+  const [cartDetails, setCartDetails] = useState({numItems: 0, total: 0, items: []})
 
   return (
     <CartContext.Provider value={{cartDetails, setCartDetails}}>

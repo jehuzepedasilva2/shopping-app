@@ -3,7 +3,7 @@
 #shirts-women-page {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 3rem;
   padding: 2rem;
 }
 
