@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { useState, createContext } from "react";
+import HomePage from "../pages/Homepage";
 
 // to use:
 // import { useContext } from 'react'
