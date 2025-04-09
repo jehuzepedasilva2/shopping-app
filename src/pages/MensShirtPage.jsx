@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import Shirt from "../components/Shirt";
 
+const KEY ='9r9NIUrem4oaWJKpe3MPYbXqvjkDAzEiVg0Sk3zk3Qs';
+
 const MensShirtPage = () => {
     const [imgsData, setImgsData] = useState([]);
   
@@ -12,10 +14,19 @@ const MensShirtPage = () => {
       }
       getImageData();
     } ,[])
+
+    // useEffect(() => {
+    //   fetch(`https://api.unsplash.com/search/photos?query=mens-shirt&client_id=${KEY}`)
+    //   .then(response => response.json())
+    //   .then(data => setImgsData(data.results))
+    //   .catch(error => console.log(error))
+    // }, [])
+
+    // console.log(imgsData);
     
   return (
-    <div>
-      <Shirt imgsData={imgsData}/>
+    <div id='shirts-men-page'>
+      <Shirt imgsData={imgsData} />
     </div>
   )
 }

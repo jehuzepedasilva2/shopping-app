@@ -1,11 +1,11 @@
 .item {
-  width: calc(400px + 8rem / 3);
+  width: calc(400px + 6rem / 3);
   /* width: 400px; */
   height: max-content;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0.2rem;
 }
 
 .item-price {
@@ -13,4 +13,34 @@
   display: flex;
   justify-content: flex-end;
   width: 100%;
+  gap: 1rem;
+  padding: 0.1rem;
+}
+
+.more-less-btn {
+  border: none;
+  background-color: var(--home-slogan-color);
+  color: var(--text-selected-color);
+  padding: 0.2rem;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease-in;
+}
+
+.more-less-btn:hover {
+  transform: scale(1.1);
+}
+
+.buy-btn {
+  border: none;
+  background-color: var(--accent-color);
+  color: var(--text-selected-color);
+  padding: 0.2rem;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease-in;
+}
+
+.buy-btn:hover {
+  transform: scale(1.1);
 }

@@ -17,6 +17,7 @@ const ShirtsPage = () => {
     getImageData("women's clothing", setImgsDataWoman);
   } ,[])
 
+
   return (
     <div id='shirts-page'>
       <Shirt imgsData={imgsDataMen.concat(imgsDataWoman)} />
