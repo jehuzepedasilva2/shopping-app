@@ -4,16 +4,12 @@ import { CartContext } from '../layouts/MainLayout.jsx';
 
 const Item = ({ data, other=false }) => {
 
-  let desc = '', imgSrc = '', itemPrice = '';
+  let desc = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  let imgSrc = '', itemPrice = '';
   if (other) {
-    console.log(data.alt_description, data);
-    desc = data.alt_description;
     imgSrc = data.urls.full;
     itemPrice = 99.99;
-    // itemPrice = (Math.random() * (140 - 30)) + 30;
-    // itemPrice = Math.round(itemPrice * 100) / 100;
   } else {
-    desc = data.description;
     imgSrc = data.image;
     itemPrice = data.price;
   }
@@ -38,10 +34,10 @@ const Item = ({ data, other=false }) => {
         <button
           className='buy-btn'
           onClick={() => { 
-            setCartDetails(previous => {return {numItems: previous.numItems + 1, total: previous.total + Number(data.price)}}) 
+            setCartDetails(previous => {return {numItems: previous.numItems + 1, total: previous.total + Number(itemPrice)}}) 
           }}
         >
-          Buy
+          Add to Cart
         </button>
       </div>
     </div>
