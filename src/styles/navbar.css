@@ -1,5 +1,13 @@
 #navbar {
-    display: flex;
+
+  /* for fixed navbar */
+  position: fixed;
+  width: 100vw;
+  background-color: white;
+  z-index: 2;
+  /* ---- */
+
+  display: flex;
   justify-content: space-between;
   align-items: flex-end;
   font-family: var(--secondary-font-family);

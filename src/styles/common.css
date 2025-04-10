@@ -2,6 +2,9 @@
   font-family: var(--primary-font-family);
   font-size: var(--primary-font-size);
   text-align: center;
+
+  /* for fixed nav bar */
+  margin-top: 4rem;
 }
 
 .items {

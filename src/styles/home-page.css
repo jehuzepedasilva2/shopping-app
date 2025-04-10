@@ -1,5 +1,8 @@
 .homepage {
   position: relative;
+  
+  /* for fixed nav bar */
+  margin-top: 4rem;
 }
 
 .slogan-container-1 {
