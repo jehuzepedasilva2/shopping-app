@@ -12,7 +12,7 @@ const Item = ({ data, other=false }) => {
     itemPrice = 99.99;
   } else {
     imgSrc = data.image;
-    itemPrice = data.price;
+    itemPrice = (Math.round(data.price * 100) / 100).toFixed(2);
   }
 
   const [showFullDesc, setShowFullDesc] = useState(false);
@@ -33,7 +33,7 @@ const Item = ({ data, other=false }) => {
         {showFullDesc ? 'Less' : 'More'}
       </button>
       <div className='item-price'>
-        ${itemPrice}
+        $ {itemPrice}
         <button
           className='buy-btn'
           onClick={() => { 
