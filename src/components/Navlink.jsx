@@ -13,7 +13,7 @@ export default function Navlink({ title, to, classFunction }) {
       className={({ isActive }) => classFunction(isActive)}
     >
       {title}
-      {title === 'CART' && 
+      {title === 'CART' && cartDetails.items.length > 0 &&
         <div className='item-count'>{cartDetails.items.length}</div>
       }
     </NavLink>

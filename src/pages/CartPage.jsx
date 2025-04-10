@@ -32,7 +32,7 @@ const CartPage = () => {
         })}
       </div>
       <div className='cart-total'>
-        Number of Items: {cartDetails.items.length} | Total: $ {(Math.round(cartDetails.total * 100) / 100).toFixed(2)}
+        Number of Items: {cartDetails.items.length} <br></br> Total: $ {(Math.round(cartDetails.total * 100) / 100).toFixed(2)}
       </div>
     </div>
   )
