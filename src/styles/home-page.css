@@ -19,7 +19,7 @@
   font-size: 4.5rem;
   font-family: var(--primary-font-family);
   position: absolute;
-  top: 12%;
+  top: 13%;
   left: 50%;
 }
 
@@ -31,4 +31,5 @@
   object-fit: cover;
   height: calc(100vh - 4rem);
   width: 100vw;
+  object-position: 50% 0%;
 }

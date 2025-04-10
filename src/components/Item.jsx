@@ -20,9 +20,9 @@ const Item = ({ data, other=false }) => {
   const { _, setCartDetails } = useContext(CartContext);
 
   const handleBuyButton = (id) => {
+    let prev = id;
+    setIdAdded(previous => previous + 1);
     setCartDetails(previous => {
-      let prev = id;
-      setIdAdded(previous => previous + 1);
       return {items: [
           ...previous.items, 
           {id: prev, src: imgSrc, price: itemPrice, desc: desc}
@@ -41,16 +41,16 @@ const Item = ({ data, other=false }) => {
         className='more-less-btn'
         onClick={() => setShowFullDesc((previous) => !previous)}
       >
-        {showFullDesc ? 'Less' : 'More'}
+        {showFullDesc ? 'Less Info' : 'More Info'}
       </button>
       <div className='item-price'>
-        $ {itemPrice}
         <button
           className='buy-btn'
           onClick={() => handleBuyButton(data.id + idAdded)}
         >
           Add to Cart
         </button>
+        $ {itemPrice}
       </div>
     </div>
   );
