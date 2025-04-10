@@ -5,10 +5,16 @@ import { useContext } from 'react';
 
 const CartPage = () => {
 
-  const { cartDetails, _ } = useContext(CartContext);
+  const { cartDetails, setCartDetails } = useContext(CartContext);
 
   if (cartDetails.items.length === 0) {
     return <div className='empty-cart'>EMPTY CART</div>
+  }
+
+  const handleDeleteItem = (id) => {
+    const updatedItems = cartDetails.items.filter((currItem) => currItem.id !== id);
+    //  update price and curr items here
+    // setCartDetails(previous => {return {previous.total - , items: updatedItems}});
   }
 
   return (
@@ -26,6 +32,12 @@ const CartPage = () => {
                   {item.desc} 
                 </p>
                 <h2 className='cart-item-info-price'>
+                  <button 
+                    className='del-item'
+                    onClick={item => handleDeleteItem(item.id)}
+                  >
+                    Delete
+                  </button>
                   $ {item.price}
                 </h2>
               </div>

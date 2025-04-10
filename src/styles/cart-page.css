@@ -34,7 +34,6 @@
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
   width: 100%;
-
 }
 
 .cart-item-info > p, 
@@ -50,8 +49,12 @@
 
 .cart-item-info-price {
   grid-row: 2;
-  align-self: center;
-  justify-self: end;
+  /* align-self: center;
+  justify-self: end; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
 }
 
 .cart-total {
@@ -70,4 +73,21 @@
 
   font-family: var(--primary-font-family);
   font-size: var(--primary-font-size);
+}
+
+.del-item {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 0.2rem;
+  font-family: var(--secondary-font-family);
+  font-size: var(--secondary-font-size);
+  border-radius: 0.5rem;
+  cursor: pointer;
+
+  transition: transform 0.2s ease-in;
+}
+
+.del-item:hover {
+  transform: scale(1.08);
 }
