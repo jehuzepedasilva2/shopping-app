@@ -52,6 +52,18 @@
   border-bottom: 3px solid black;
 }
 
+.item-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
+  background-color: red;
+  border-radius: 10px;
+  padding-left: 2px;
+  padding-right: 2px;
+
+}
+
 .selected {
   /* background-color: var(--text-primary-color); */
   /* color: var(--text-selected-color); */
