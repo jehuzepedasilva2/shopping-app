@@ -16,13 +16,24 @@ const Item = ({ data, other=false }) => {
   }
 
   const [showFullDesc, setShowFullDesc] = useState(false);
-  const { cartDetails, setCartDetails } = useContext(CartContext);
+  const [idAdded, setIdAdded] = useState(0);
+  const { _, setCartDetails } = useContext(CartContext);
 
-  console.log(cartDetails);
+  const handleBuyButton = (id) => {
+    setCartDetails(previous => {
+      let prev = id;
+      setIdAdded(previous => previous + 1);
+      return {items: [
+          ...previous.items, 
+          {id: prev, src: imgSrc, price: itemPrice, desc: desc}
+        ], total: previous.total + Number(itemPrice)
+      }
+    });
+  };
 
   return (
     <div className='item'>
-      <img key={data.id} src={imgSrc}></img>
+      <img key={data.id + idAdded} src={imgSrc}></img>
       <div className='item-info'>
         {showFullDesc ? desc : desc.substring(0, 100) + '...'}
       </div>
@@ -36,9 +47,7 @@ const Item = ({ data, other=false }) => {
         $ {itemPrice}
         <button
           className='buy-btn'
-          onClick={() => { 
-            setCartDetails(previous => {return {items: [...previous.items, {id: data.id, src: imgSrc, price: itemPrice, desc: desc}], total: previous.total + Number(itemPrice)}}) 
-          }}
+          onClick={() => handleBuyButton(data.id + idAdded)}
         >
           Add to Cart
         </button>

@@ -12,18 +12,25 @@ const CartPage = () => {
   }
 
   const handleDeleteItem = (id) => {
-    const updatedItems = cartDetails.items.filter((currItem) => currItem.id !== id);
-    //  update price and curr items here
-    // setCartDetails(previous => {return {previous.total - , items: updatedItems}});
+    const updatedItems = cartDetails.items.filter((currItem) => {
+      return currItem.id !== id;
+    });
+    const newTotal = cartDetails.items.reduce((total, currItem) => {
+      if (currItem.id === id) {
+        return total;
+      }
+      return total + Number(currItem.price);
+    }, 0)
+    setCartDetails({total: newTotal, items: updatedItems});
   }
 
   return (
     <div id='cart-page'>
       <h1 className='main-headings'>Cart</h1>
       <div className='cart-list'>
-        {cartDetails.items.map(item => {
+        {cartDetails.items.map((item, i) => {
           return (
-            <div key={item.id} className='cart-item'>
+            <div key={item.id + i} className='cart-item'>
               <div className='cart-item-img'>
                 <img src={item.src}></img>
               </div>
@@ -34,7 +41,7 @@ const CartPage = () => {
                 <h2 className='cart-item-info-price'>
                   <button 
                     className='del-item'
-                    onClick={item => handleDeleteItem(item.id)}
+                    onClick={() => handleDeleteItem(item.id)}
                   >
                     Delete
                   </button>
