@@ -3,11 +3,13 @@ import '../styles/common.css';
 import { CartContext } from '../layouts/MainLayout.jsx';
 import { useContext } from 'react';
 
-// {id: data.id, src: imgSrc, price: itemPrice, desc: desc}], total: previous.total + Number(itemPrice)}
-
 const CartPage = () => {
 
   const { cartDetails, _ } = useContext(CartContext);
+
+  if (cartDetails.items.length === 0) {
+    return <div className='empty-cart'>EMPTY CART</div>
+  }
 
   return (
     <div id='cart-page'>

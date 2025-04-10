@@ -59,3 +59,15 @@
   font-size: var(--primary-font-size);
   text-align: center;
 }
+
+.empty-cart {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+
+  justify-content: center;
+  align-items: center;
+
+  font-family: var(--primary-font-family);
+  font-size: var(--primary-font-size);
+}
