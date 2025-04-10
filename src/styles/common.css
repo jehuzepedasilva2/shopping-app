@@ -26,3 +26,32 @@
   object-fit: contain;
   object-position: center;
 }
+
+.spinner-container {
+  width: 100vw;
+  height: calc(100vh - 12rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-spinner {
+  border: 16px solid #cecdcd; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from { 
+    transform: rotate(0deg); 
+  }
+  to { 
+    transform: rotate(360deg); 
+  }
+}
+
+

@@ -15,6 +15,14 @@ const MensPantsPage = () => {
     .catch(error => console.log(error));
   }, [])
 
+  if (!imgData.length) {
+    return (
+      <div className='spinner-container'>
+        <div className='loading-spinner'></div>
+      </div>
+    );
+  }
+
   return (
     <div id='pants-men-page'>
       <DisplayItem imgsData={imgData} other={true} />

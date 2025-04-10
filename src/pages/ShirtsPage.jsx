@@ -6,32 +6,44 @@ import DisplayItem from '../components/DisplayItem.jsx';
 const KEY = '9r9NIUrem4oaWJKpe3MPYbXqvjkDAzEiVg0Sk3zk3Qs';
 
 const ShirtsPage = () => {
-  // const [imgData, setImgData] = useState([]);
   const [imgsDataMen, setImgsDataMen] = useState([]);
   const [imgsDataWoman, setImgsDataWoman] = useState([]);
 
   useEffect(() => {
-    const getImageData = async(gender, setImgsData) => {
-      const response = await fetch(`https://fakestoreapi.com/products/category/${gender}`);
-      const data = await response.json();
-      setImgsData(data);
-    }
-    getImageData("men's clothing", setImgsDataMen);
-    getImageData("women's clothing", setImgsDataWoman);
-  } ,[])
+    const fetchAll = async () => {
+      try {
+        // fetch the data in parallel
+        const [menRes, womenRes] = await Promise.all([
+          fetch("https://fakestoreapi.com/products/category/men's clothing"),
+          fetch("https://fakestoreapi.com/products/category/women's clothing")
+        ]);
 
-    // useEffect(() => {
-    //   fetch(`https://api.unsplash.com/search/photos?query=shirts&client_id=${KEY}`)
-    //   .then(response => response.json())
-    //   .then(data => setImgData(data.results))
-    //   .catch(error => console.log(error));
-    // }, [])
+        const [menData, womenData] = await Promise.all([
+          menRes.json(),
+          womenRes.json()
+        ]);
 
+        setImgsDataMen(menData);
+        setImgsDataWoman(womenData);
+      } catch (error) {
+        console.error("Error fetching clothing data:", error);
+      }
+    };
+
+    fetchAll();
+  }, []);
+
+  if (!imgsDataMen.length || !imgsDataWoman.length) {
+    return (
+      <div className='spinner-container'>
+        <div className='loading-spinner'></div>
+      </div>
+    );
+  }
 
   return (
     <div id='shirts-page'>
       <DisplayItem imgsData={imgsDataMen.concat(imgsDataWoman)} />
-      {/* <DisplayItem imgsData={imgData} other={true} /> */}
     </div>
   )
 }

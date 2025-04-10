@@ -1,8 +1,8 @@
 .homepage {
   position: relative;
-  
   /* for fixed nav bar */
   margin-top: 4rem;
+  overflow: hidden;
 }
 
 .slogan-container-1 {
@@ -29,6 +29,6 @@
 
 #homepage-img {
   object-fit: cover;
-  height: 100vh;
+  height: calc(100vh - 4rem);
   width: 100vw;
 }
